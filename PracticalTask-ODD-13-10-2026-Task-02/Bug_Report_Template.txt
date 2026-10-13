@@ -30,5 +30,5 @@ Observed result: Rate: Rs. 5 | Basic fine: Rs. 50 | Total including applicable p
 Mobile layout checked (Yes/No): Yes (below 600px the cards stack in one column and the navigation becomes vertical)
 
 GIT VERSION CONTROL
-git log -1 --oneline output: 9903c57 (HEAD -> main) Fix bugs and complete library fine calculator
+git log -1 --oneline output: 6a93e6d (HEAD -> main, origin/main) Complete bug report
 GitHub URL (if available): https://github.com/Preyas-ce/library-fine-calculator
