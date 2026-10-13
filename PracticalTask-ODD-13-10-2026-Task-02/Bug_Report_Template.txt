@@ -1,34 +1,34 @@
 ITUS102 - PRACTICAL EXAMINATION | DEBUGGING AND IMPLEMENTATION REPORT
 Date: 13-10-2026 | Task 02 - Library Late-Return Fine Calculator
 
-Enrollment No.:
-Name:
+Enrollment No.: 26CE071
+Name: Preyas Patel
 
 SIMPLE BUGS (write a brief explanation for each)
 Bug | Original problem | Correction made | Why required
-S1  |                  |                 |
-S2  |                  |                 |
-S3  |                  |                 |
-S4  |                  |                 |
-S5  |                  |                 |
-S6  |                  |                 |
+S1  | Nav link href was "#calcuator" (spelling mistake), so it matched no element id. | Changed to href="#calculator" to match <section id="calculator">. | An anchor link only scrolls if its target matches an existing id exactly.
+S2  | Footer used a generic <div class="site-footer">. | Replaced it with <footer class="site-footer"> (content unchanged). | Semantic HTML5 elements give meaning for accessibility, SEO and readability.
+S3  | CSS had "background-color #f1f6f9;" with the colon missing. | Wrote "background-color: #f1f6f9;". | Without the colon the declaration is invalid, so the browser ignores it.
+S4  | Rule used the class selector ".pageTitle", but the HTML has id="pageTitle". | Changed the selector to "#pageTitle". | "." selects classes and "#" selects ids, so the selector must match the HTML.
+S5  | lateDays was read as Number(value) - 1, so one day was always lost. | Removed the "- 1". | The fine must be calculated on the exact late days entered.
+S6  | processingCharge was 100. | Changed it to 10. | The policy says the processing charge is Rs. 10.
 
 CODE COMPLETION / IMPLEMENTATION (briefly state what was completed)
-M1:
-M2:
-M3:
-M4:
-M5:
-M6:
-D1:
-D2:
-D3:
+M1: Added <meta charset="UTF-8"> and <meta name="viewport" content="width=device-width, initial-scale=1.0"> in the <head> of index.html.
+M2: Added <aside class="notice"> with <h2>Important Note</h2> and one sentence reminding users to check the late days and book count.
+M3: .nav-links now has display:flex and justify-content:space-between.
+M4: .cards now has display:grid and grid-template-columns:1fr 1fr (two equal columns).
+M5: In @media (max-width:600px), .cards uses grid-template-columns:1fr and .nav-links uses flex-direction:column.
+M6: calculateFine(days, books, rate) returns days * books * rate.
+D1: chooseRate(type) uses if / else if / else: Student=5, Staff=3, otherwise (Visitor)=10.
+D2: calculateTotal(fine, processingCharge) returns 0 when fine <= 0, otherwise fine + processingCharge.
+D3: buildBreakdown() uses a for loop from day 1 to days and adds "Day N: cumulative fine = (N * books * rate)" on each line.
 
 FUNCTIONAL TEST
-Test input:
-Observed result:
-Mobile layout checked (Yes/No):
+Test input: 5 late days, 2 books, Student
+Observed result: Rate: Rs. 5 | Basic fine: Rs. 50 | Total including applicable processing charge: Rs. 60. Breakdown shows Day 1 = 10, Day 2 = 20, Day 3 = 30, Day 4 = 40, Day 5 = 50.
+Mobile layout checked (Yes/No): Yes (below 600px the cards stack in one column and the navigation becomes vertical)
 
 GIT VERSION CONTROL
-git log -1 --oneline output:
-GitHub URL (if available):
+git log -1 --oneline output: 9903c57 (HEAD -> main) Fix bugs and complete library fine calculator
+GitHub URL (if available): https://github.com/Preyas-ce/library-fine-calculator
